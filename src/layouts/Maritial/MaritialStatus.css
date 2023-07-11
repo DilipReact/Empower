@@ -1,0 +1,87 @@
+.maritial_head {
+  display: flex;
+  align-items: center;
+}
+.maritial_title {
+  font-size: 22px !important;
+  margin-left: 5px !important;
+}
+
+.create_btn {
+  color: #fff;
+  background-color: rgb(9, 103, 165);
+  border: none;
+  border-radius: 5px;
+  margin-left: 7px;
+  width: 3.5%;
+  font-size: 22px;
+  height: 26px;
+}
+.create_btn:hover {
+  cursor: pointer !important;
+  background-color: rgb(26, 84, 209);
+}
+
+.maritial_table {
+  max-width: 80%;
+  margin: auto;
+  margin-top: 5%;
+}
+table {
+  border: none;
+}
+.maritial_edit {
+  background-color: rgb(231, 168, 31);
+  width: 22px;
+  height: 22px;
+  margin: auto;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center !important;
+}
+
+.Create_status_head {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ebe9e9cc;
+  padding: 0.5%;
+}
+.Create_status_title {
+  font-weight: 600 !important;
+}
+.Create_status_back_btn {
+  background-color: rgb(250, 103, 103) !important;
+  color: #fff !important;
+}
+
+.Create_status_body {
+  max-width: 100%;
+  margin: auto;
+  margin-top: 7%;
+  border: 1px solid #ccc;
+  padding: 5%;
+  border-radius: 10px;
+}
+#Create_status_label{
+    font-size: 17px;
+}
+.Create_status_btn{
+text-align: center;
+margin-top: 2% ;
+}
+.Create_status_btn_save{
+    background-color: rgb(26, 201, 163) !important;
+    color: #ffff !important;
+    margin-left: 5px !important;
+    width: 10% !important;
+}
+.Create_status_btn_cnsl{
+    background-color: rgb(250, 103, 103)!important;
+    color: #ffff !important;
+    width: 10% !important;
+    
+}
+
+.maritial_input{
+  width:35vw !important;
+}

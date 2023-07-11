@@ -1,0 +1,83 @@
+.input_box {
+  background-color: #ffffff;
+  margin-right: 10px;
+  margin-bottom: 1000px;
+}
+
+.btn_save {
+  color: white;
+  background-color: black;
+  width: 100px;
+  height: 25px;
+  border-radius: 20%;
+}
+
+.pic_baground {
+  width: 100%;
+  height: 6em;
+}
+
+.avatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.label {
+  font-size: 15px;
+}
+
+.save_btn {
+  color: #ffffff;
+  background-color: black;
+  padding: 1%;
+  border-radius: 5px;
+  box-shadow: 5px 10px #888888;
+}
+
+.Profile_name {
+  font-size: 10px;
+  font-weight: 400;
+  text-align: center !important;
+}
+
+.Profile_name span {
+  margin-right: 3px;
+}
+
+.edit_icon {
+  border-radius: 5px;
+  width: 5%;
+  color: #fff;
+  padding: 1%;
+  background-color: rgb(41, 96, 180) !important;
+}
+#view_icon{
+  margin-top: 3px !important;
+  font-size: larger !important;
+}
+
+.cancel_btn {
+  background-color: blue;
+  border-left: ridge;
+}
+
+.table {
+  border: black 10px;
+  padding: 10px;
+}
+
+.table th {
+  color: aqua;
+}
+
+.table td {
+  color: black;
+}
+.Tabalecell {
+  font-size: small;
+  font-weight: 200px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}

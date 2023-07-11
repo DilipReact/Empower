@@ -1,0 +1,71 @@
+.dsg_head {
+  display: flex;
+  align-items: center;
+}
+.dsg_head {
+}
+.dsg_heading {
+  font-size: 22px !important;
+  margin-left: 5px !important;
+  font-weight: 500 !important;
+}
+.dsg_create_btn {
+  background-color: rgb(10, 119, 209);
+  width: 3%;
+  height: 28px;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  margin-left: 10px;
+}
+.dsg_create_btn #dsg_create_icon {
+  margin: 2px 2px 3px 3px !important;
+}
+.autoresize_inpt {
+  width: 100% !important;
+  min-height: 150px !important;
+  border-radius: 5px !important;
+  padding: 10px;
+  font-size: 16px !important;
+  color: #505050;
+}
+.dsg_save_btn {
+  /* background-color: rgb(12, 165, 114) !important; */
+  color: #09814f !important;
+  width: 5% !important;
+}
+.dsg_cncl_btn {
+  /* background-color: rgb(204, 71, 71) !important; */
+  color: #e94848 !important;
+  width: 5% !important;
+}
+.input_lable {
+  font-size: 15px !important;
+}
+.input_lable span {
+  color: red !important;
+}
+.error {
+  color: rgb(177, 65, 65) !important;
+}
+.dsg_search {
+  float: right !important;
+  background-color: #fff !important;
+  width: 30% !important;
+}
+.dsg_table {
+  
+}
+.dsg_edit {
+  background-color: rgb(201, 150, 41);
+  color: #fff;
+  width: 22px !important;
+  border-radius: 5px;
+  border: none;
+  height: 22px !important;
+  margin: auto !important;
+}
+.dsg_edit:hover {
+  cursor: pointer !important;
+  background-color: rgb(175, 121, 5);
+}

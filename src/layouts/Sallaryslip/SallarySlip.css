@@ -1,0 +1,25 @@
+.btn{
+    color:#fff !important;
+}
+
+.alert_message{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    background-color: rgb(155, 234, 223) !important;
+    font-weight: 500 !important;
+    
+}
+
+.doenload_btn{
+    padding: 0.5rem !important;
+    background-color: rgb(100, 169, 146);
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+.doenload_btn:hover{
+    background-color: rgb(55, 103, 87);
+    cursor: pointer;
+}

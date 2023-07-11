@@ -1,0 +1,57 @@
+.activities {
+  display: flex;
+  align-items: center;
+}
+.activities_icon {
+}
+
+.activities_head {
+  font-weight: 500;
+  margin-left: 0.5%;
+}
+.activities_create_btn {
+  width: 3%;
+  border-radius: 5px;
+  background-color: rgb(29, 158, 209);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  margin-left: 1%;
+}
+.input_lable {
+  font-size: 15px;
+}
+.error {
+  color: rgb(235, 58, 58);
+}
+.search_activity {
+  float: right;
+  width: 25%;
+  background-color: #fff !important;
+}
+.activity_back_btn {
+  padding: 0.5%;
+  background-color: rgb(241, 114, 114);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.activity_back_btn:hover {
+  background-color: rgb(236, 63, 63);
+  cursor: pointer;
+}
+
+.edit_icon {
+  padding: 1%;
+  border-radius: 3px;
+  background-color: rgb(221, 168, 71);
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  margin: auto !important;
+}
+.edit_icon:hover {
+  cursor: pointer;
+  background-color: rgb(56, 185, 142);
+}

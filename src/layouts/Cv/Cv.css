@@ -1,0 +1,111 @@
+.cv_head {
+  display: flex;
+}
+
+
+.cv_add {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 3% !important;
+  background-color: #1198b9 !important;
+  color: #fff !important;
+  margin: 5px !important;
+}
+
+.error {
+  color: rgb(224, 70, 70);
+  font-size: 14px;
+}
+
+.table_container {
+}
+.search_box {
+  float: right !important;
+  width: 30% !important;
+  background-color: #fff !important;
+}
+
+.table_action {
+  display: flex;
+  justify-content: center;
+}
+th {
+  background-color: #696969;
+  color: #fff;
+}
+td {
+  font-size: 16px;
+}
+
+.action_download {
+  color: #fff;
+  background-color: rgb(67, 167, 133);
+  border-radius: 3px;
+  width: 22px !important;
+  height: 22px;
+  margin-left: 5px;
+}
+.action_download:hover{
+  cursor: pointer;
+  background-color: rgb(4, 114, 81);
+}
+.action_edit {
+  color: #fff;
+  width: 22px !important;
+  height: 22px;
+  border-radius: 3px;
+  background-color: rgb(209, 168, 91);
+}
+.action_edit:hover{
+  cursor: pointer;
+  background-color: rgb(167, 142, 6);
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.pagination_btn {
+  background-color: #1198b9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1%;
+  margin-right: 10px;
+}
+.pagination_btn:hover {
+  background-color: rgb(14, 148, 103);
+  cursor: pointer;
+}
+
+.pagination_num {
+  margin-right: 10px;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.alert_message {
+  width: 60%;
+  margin: auto;
+  font-weight: 500 !important;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+.cv_label{
+  font-size: 15px;
+}
+.cv_label span {
+color: red !important;
+}
+
+.selectBox {
+  width: 100% !important;
+  height: 43px !important;
+  border-radius: 5px !important;
+  padding: 7px !important;
+  border: 1px solid #cccc !important;
+  outline: none !important;
+}

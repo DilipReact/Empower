@@ -1,0 +1,18 @@
+.StyledTextarea {
+  height: 150px !important;
+  width: 100% !important;
+  outline: none;
+  border-radius: 5px;
+  padding: 1%;
+  outline: none;
+  border-color: #cccc;
+}
+
+.customSelectBox {
+  width: 100% !important;
+  height: 43px !important;
+  border-radius: 5px !important;
+  padding: 7px !important;
+  border: 1px solid #cccc !important;
+  outline: none !important;
+}

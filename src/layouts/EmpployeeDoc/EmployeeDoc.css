@@ -1,0 +1,61 @@
+.emp_doc {
+  display: flex;
+  align-items: center;
+  margin-top: 2%;
+}
+.emp_doc_head {
+  font-size: 22px !important;
+  margin-left: 5px !important;
+  font-weight: 500 !important;
+}
+.emp_doc_crt_btn {
+  width: 40px !important;
+  height: 30px;
+  margin-left: 15px !important;
+  background-color: rgb(32, 173, 155) !important;
+  color: #fff !important;
+  font-size: 22px !important;
+  border: none;
+  border-radius: 5px;
+}
+.emp_doc_input_label {
+  font-size: 15px;
+}
+.selict_box {
+  height: 45px !important;
+}
+.error {
+  color: rgb(238, 86, 86);
+}
+.table_container{
+    margin-top: 4%;
+}
+.emp_doc_table_action_btn {
+  display: flex;
+  justify-content: center;
+}
+.emp_doc_table_action_btn_edit {
+  background-color: rgb(221, 171, 34);
+  color: #fff;
+  width: 25px;
+  border-radius: 5px;
+  padding: 2px;
+  height: 25px;
+}
+.emp_doc_table_action_btn_edit:hover {
+  cursor: pointer;
+  background-color: rgb(196, 149, 22);
+}
+.emp_doc_table_action_btn_download:hover {
+  cursor: pointer;
+  background-color: rgb(29, 153, 116);
+}
+.emp_doc_table_action_btn_download {
+  background-color: rgb(53, 187, 147);
+  color: #fff;
+  width: 25px;
+  border-radius: 5px;
+  padding: 2px;
+  height: 25px;
+  margin-left: 5px;
+}

@@ -1,0 +1,21 @@
+.workExp_head {
+  display: flex !important;
+}
+.workExp_btn {
+  background-color: rgb(44, 126, 233) !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 5px;
+  padding: 1%;
+  width: 35px;
+  margin-left: 5px;
+}
+.error {
+  color: red;
+}
+.autore_size_inpt {
+  width: 100%;
+  min-height: 100px;
+  border-radius: 5px;
+  padding: 2%;
+}

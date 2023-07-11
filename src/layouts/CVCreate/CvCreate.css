@@ -1,0 +1,210 @@
+.stapper {
+  background: radial-gradient(rgb(155, 154, 154), transparent) !important;
+  width: 80% !important;
+  padding: 2% !important;
+  margin: auto;
+}
+.stappar_next_btn {
+  background-color: rgb(61, 119, 196) !important;
+  color: #fff !important;
+}
+.stappar_back_btn {
+  background-color: rgb(61, 119, 196) !important;
+  color: #fff !important;
+}
+.stappar_btn {
+  display: flex !important;
+  width: 30%;
+  /* background-color: red; */
+  margin: auto;
+  justify-content: space-evenly !important;
+}
+.cv_emp_list_body {
+  padding: 1%;
+  margin: 2%;
+}
+.cv_emp_list_head {
+  display: flex;
+  align-items: center;
+}
+.cv_emp_list_head_title {
+  font-weight: 500 !important;
+  margin-left: 6px !important;
+}
+.table_body {
+  border: none;
+  background: transparent !important;
+}
+th {
+  background: none;
+  font-size: 14px;
+  color: rgb(82, 81, 81);
+}
+
+.table_container {
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table_container th,
+.table_container td {
+  border: none;
+  padding: 8px;
+}
+th {
+  font-size: 16px;
+}
+td {
+  font-size: 14px;
+}
+.MuiStepper-root {
+  background-color: red !important;
+}
+/* stapper CSS */
+.stapper_btn {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* CSS for Add Experience component */
+.add_exp {
+  width: 100%;
+  padding: 2%;
+  margin: auto;
+}
+.exp_head {
+  margin: auto;
+  background-color: rgb(230, 228, 228);
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 5px;
+}
+.add_exp_form {
+  width: 50% !important;
+  margin: auto !important;
+  margin-top: 2% !important;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1%;
+}
+.add_exp_inpt_label {
+  font-size: 13px;
+  margin-left: 2px;
+}
+.add_exp_form_item {
+  margin-right: 13px !important;
+}
+.checkbox_input {
+  margin-left: 5px;
+}
+.multipal_select {
+  padding: 0.5% !important;
+  height: 43px;
+}
+.input_field {
+  width: 100% !important;
+  min-height: 25px !important;
+  padding: 10px;
+  color: #474747 !important;
+  font-size: 16px !important;
+  border-radius: 5px !important;
+  background-color: transparent !important;
+  outline: none !important;
+  border-color: #ccc !important;
+}
+.scrollable-select {
+  min-height: 50px !important;
+  overflow-y: auto !important;
+}
+
+/* css for Add Project List */
+.addproject_head {
+  display: flex !important;
+  align-items: center;
+  margin-top: 10px;
+}
+.head_item {
+  font-weight: 500 !important;
+  margin-left: 10px !important;
+}
+.stepperHeader {
+  padding: 10px 20px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: rgb(27, 27, 228) !important;
+}
+
+/* css for Employees CV Table */
+.cv_crerate_table_head {
+  display: flex !important;
+  align-items: center;
+  background-color: #e0dfdf;
+  padding: 1%;
+  border-radius: 5px;
+}
+.cv_crerate_head_item {
+  font-weight: 500;
+}
+.cv_action_btn {
+  display: flex;
+  justify-content: center;
+}
+.cv_action_view_btn {
+  background-color: rgb(40, 183, 226);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 20px;
+  width: 28px;
+  height: 27px;
+  align-items: center;
+}
+.cv_action_download_btn {
+  background-color: rgb(15, 184, 133);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 20px;
+  width: 28px;
+  height: 27px;
+  margin-left: 5px;
+}
+
+/* CSS for CvCreate table */
+.dailog {
+  padding: 2%;
+}
+.cv_name {
+  color: #268ee4;
+  font-size: 22px;
+}
+.cv_name_items {
+  font-size: 12px;
+}
+.cv_name_items span {
+  color: #268ee4;
+}
+
+.cv_label,
+.about_emp_lable {
+  margin-top: 12px;
+  color: #268ee4;
+}
+.about_emp_lables {
+  font-size: 15px;
+}
+.cv_item {
+  color: #69b3f0;
+  font-size: 15px;
+}
+.cv_item span {
+  color: #353b3f;
+}
+.dob {
+  margin-top: 5px;
+}
+
+.aaaa {
+  background-color: red !important;
+  font-size: 10rem !important;
+  color: red !important;
+}

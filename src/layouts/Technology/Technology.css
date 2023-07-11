@@ -1,0 +1,12 @@
+.page_box {
+  color: blue;
+  width: 5px;
+  position: relative;
+  height: 30px;
+  width: 60px;
+  margin: 10px;
+  border-radius: 4px;
+}
+parent-tabalebox {
+  width: 3px;
+}
