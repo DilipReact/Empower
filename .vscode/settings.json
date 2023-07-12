@@ -15,6 +15,7 @@
         "setemployee",
         "seterror",
         "setmaritalstatus",
-        "subroutes"
+        "subroutes",
+        "Tabale"
     ]
 }

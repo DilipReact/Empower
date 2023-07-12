@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-var */
 /* eslint-disable vars-on-top */
 /* eslint-disable no-undef */
@@ -25,6 +26,8 @@ import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
+// eslint-disable-next-line import/order, import/no-useless-path-segments
+import Logo from "../src/assets/images/Mp_Logo.png"
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -168,7 +171,7 @@ export default function App() {
             <Sidenav
               color={sidenavColor}
               brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-              brandName="Material Dashboard 2"
+              brandName="MPOWER"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -192,11 +195,12 @@ export default function App() {
           <Sidenav
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName="Material Dashboard 2"
+            brandName="MPOWER"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />
+        
           <Configurator />
           {configsButton}
         </>
