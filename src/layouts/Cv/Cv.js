@@ -94,6 +94,7 @@ export default function Cv() {
   const [uploadedFile, setUploadedFile] = useState("");
   const [empCV, setEmpCV] = useState([]);
   const [quarry, setQuarry] = useState([]);
+  const [empData, setEmpData] = useState([]);
 
   // For pagination
   const [currentpage, setCurrentPage] = useState(1);
@@ -225,6 +226,18 @@ export default function Cv() {
     }
   };
 
+  // For Get Employee
+  const GetEmpData = async () => {
+    try {
+      const res = await axios.get("https://localhost:5001/api/Employee/GetAllEmployeesAsync");
+      setEmpData(res.data);
+      // console.log(res.data);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  console.log(empData, "Emp Data");
 
   const UpdateCVEmp = (values) => {
     console.log(values, "data reciving for iterate");
@@ -242,6 +255,7 @@ export default function Cv() {
 
   useEffect(() => {
     GetEmpCv();
+    GetEmpData();
   }, [data]);
 
   // For Dailog Box
@@ -291,7 +305,12 @@ export default function Cv() {
                 value={data.cvEmployeeName}
                 onChange={handleChange}
               >
-                <option>hello</option>
+                <option>--Select--</option>
+                {empData.map((item) => (
+                  <option key={item.empCode} value={item.empCode}>
+                    [{item.empCode}] {item.empFName} {item.empLName}
+                  </option>
+                ))}
               </select>
               <span className="error">{error.cvEmployeeName}</span>
             </Grid>
@@ -399,4 +418,4 @@ export default function Cv() {
     </DashboardLayout>
   );
 }
- // Ceck
+// Check
