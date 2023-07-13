@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-var */
 /* eslint-disable vars-on-top */
 /* eslint-disable no-undef */
