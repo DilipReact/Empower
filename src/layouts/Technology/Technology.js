@@ -1,11 +1,4 @@
-/* eslint-disable no-shadow */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-// /* eslint-disable prettier/prettier */
-// /* eslint-disable arrow-body-style */
-// /* eslint-disable react/function-component-definition */
+
 import React, { useEffect, useState } from "react";
 import {
   Grid,
