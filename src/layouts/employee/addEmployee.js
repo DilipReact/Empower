@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /* eslint-disable no-shadow */
 /* eslint-disable radix */
 /* eslint-disable no-irregular-whitespace */
@@ -143,6 +144,7 @@ export default function AddEmployee() {
   const [gender, setGender] = useState([]);
   const [errors, setErrors] = useState("");
   const [role, setRole] = useState([]);
+  const [technology, setTechnology] = useState([]);
   const [designation, setDesignation] = useState([]);
   const [maritalstatus, setmaritalstatus] = useState([]);
   const [error, setError] = useState("");
@@ -168,7 +170,7 @@ export default function AddEmployee() {
     empPAN: "",
     empAadhar: "",
     empHobbies: "",
-    empSkills: "",
+    empSkills: [],
     emplanguage: "",
     empSummary: "",
     empLastCompany: "",
@@ -182,22 +184,26 @@ export default function AddEmployee() {
   };
 
   const AuthGEt = JSON.parse(localStorage.getItem("myData"));
+
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const numberRegex = /^\s*[+-]?(\d+|\d*\.\d+|\d+\.\d*)([Ee][+-]?\d+)?\s*$/;
+
+  const nameRegex = /([A-Z][a-z]*)([\\s\\\'-][A-Z][a-z]*)*/;
+
+  const panRegex = /[A-Z]{5}[0-9]{4}[A-Z]{1}/;
+
+  const aadharRegex = /^[2-9]{1}[0-9]{3}\s[0-9]{4}\s[0-9]{4}$/;
+
   const validateForm = () => {
     const errormessage = {};
+
     // Validate empFName
     if (formState.empFName === "") {
-      errormessage.empFName = "Employee First Name is required";
+      errormessage.empFName = "Name is required";
+    } else if (!nameRegex.test(formState.empFName)) {
+      errormessage.empFName = "Invalid Name";
     }
-    // Validate empMName
-    if (formState.empMName === "") {
-      errormessage.empMName = "Employee Middle Name is required";
-    }
-    // Validate empLName
-    if (formState.empLName === "") {
-      errormessage.empLName = "Employee Last Name is required";
-    }
+
     // Validate empFatherName
     if (formState.empFatherName === "") {
       errormessage.empFatherName = "Employee Father Name is required";
@@ -208,22 +214,14 @@ export default function AddEmployee() {
     } else if (!emailRegex.test(formState.empEmailId)) {
       errormessage.empEmailId = "Invalid email address";
     }
-    // Validate empPersonalEmailId
-    if (formState.empPersonalEmailId === "") {
-      errormessage.empPersonalEmailId = "Personal EmailId is required";
-    } else if (!emailRegex.test(formState.empPersonalEmailId)) {
-      errormessage.empPersonalEmailId = "Invalid email address";
-    }
+
     // Validate empMobileNumber
     if (formState.empMobileNumber === "") {
       errormessage.empMobileNumber = "Employee Mobile Number is required";
     } else if (!numberRegex.test(formState.empMobileNumber)) {
       errormessage.empMobileNumber = "Invalid Number";
     }
-    // Validate empEmergencyContactNumber
-    if (formState.empEmergencyContactNumber === "") {
-      errormessage.empEmergencyContactNumber = "Employee Emergency Contact Number is required";
-    }
+
     // Validate empSkills
     if (formState.empSkills === "") {
       errormessage.empSkills = "Employee Skills is required";
@@ -253,26 +251,27 @@ export default function AddEmployee() {
     if (formState.empRoleId === "") {
       errormessage.empRoleId = "Employee Role is required";
     }
-    // Validate empLastCompany
-    if (formState.empLastCompany === "") {
-      errormessage.empLastCompany = "Employee Last Company is required";
-    }
+
     // Validate empPAN
+
     if (formState.empPAN === "") {
-      errormessage.empPAN = "Employee PAN is required";
+      errormessage.empPAN = "Employee Pan Number is required";
+    } else if (!panRegex.test(formState.empPAN)) {
+      errormessage.empPAN = "Invalid Number";
     }
+
     // Validate empAadhar
     if (formState.empAadhar === "") {
-      errormessage.empAadhar = "Employee Aadhar is required";
+      errormessage.empAadhar = "Employee Aadhar Number is required";
+    } else if (!aadharRegex.test(formState.empAadhar)) {
+      errormessage.empAadhar = "Invalid Aadhar Number";
     }
+
     // Validate empDesignationId
     if (formState.empDesignationId === "") {
       errormessage.empDesignationId = "Employee Designation is required";
     }
-    // Validate empLeaderId
-    if (formState.empLeaderId === "") {
-      errormessage.empLeaderId = "Employee Leader is required";
-    }
+
     setErrorMessage(errormessage);
     // Return true if there are no errors
     return Object.keys(errormessage).length < 1;
@@ -373,7 +372,7 @@ export default function AddEmployee() {
             empPAN: "",
             empAadhar: "",
             empHobbies: "",
-            empSkills: "",
+            empSkills: [],
             emplanguage: "",
             empSummary: "",
             empLastCompany: "",
@@ -406,6 +405,18 @@ export default function AddEmployee() {
       console.log(error);
     }
   };
+
+  const GetTechnology = async () => {
+    try {
+      const res = await axios.get("https://localhost:5001/api/Technology/GetTechnologys");
+      setTechnology(res.data);
+    } catch (err) {
+      setError(err.message);
+      console.log(error);
+    }
+  };
+
+  console.log(technology, "Technology");
 
   const GetGender = async () => {
     try {
@@ -444,6 +455,7 @@ export default function AddEmployee() {
       ...formState,
       [name]: value,
     });
+    
   };
 
   const AddOtherActivities = () => {
@@ -456,6 +468,7 @@ export default function AddEmployee() {
     GetMaritalStatus();
     GetDesignation();
     GetGender();
+    GetTechnology();
   }, []);
 
   return (
@@ -627,16 +640,38 @@ export default function AddEmployee() {
 
                   <Grid item xs={12} sm={6}>
                     <MDTypography variant="h6" fontWeight="bold">
-                      Skills:
+                      Technology:
                     </MDTypography>
-
-                    <TextField
-                      name="empSkills"
-                      variant="outlined"
+                    <Select
+                      className="customSelectBox"
+                      multiple
                       fullWidth
+                      defaultValue={formState.empSkills}
+                      onChange={handleChange}
+                      renderValue={(selected) => selected.join(", ")}
+                    >
+                      {technology &&
+                        technology?.map((item) => (
+                          <MenuItem key={item.technologyId} value={item.technologyName}>
+                            {item.technologyName}
+                          </MenuItem>
+                        ))}
+                    </Select>
+
+                    {/* <select
+                      className="customSelectBox"
+                      name="empSkills"
                       value={formState.empSkills}
                       onChange={handleChange}
-                    />
+                    >
+                      <option>--Select--</option>
+
+                      {technology.map((item) => (
+                        <option key={item.technologyId} value={item.technologyId}>
+                          {item.technologyName}{" "}
+                        </option>
+                      ))}
+                    </select> */}
 
                     <Box className="error">{errormessage.empSkills}</Box>
                   </Grid>
@@ -896,21 +931,25 @@ export default function AddEmployee() {
                     </select>
                   </Grid>
 
-                  <Grid item xs={12} sm={6}>
-                    <MDTypography variant="h6" fontWeight="bold">
-                      Date of Marriage:
-                    </MDTypography>
+                  {maritalstatus.maritalStatusId === 5 ? (
+                    <Grid item xs={12} sm={6}>
+                      <MDTypography variant="h6" fontWeight="bold">
+                        Date of Marriage:
+                      </MDTypography>
 
-                    <TextField
-                      name="empDateofMarriage"
-                      type="date"
-                      inputFormat="YYYY/MM/DD"
-                      variant="outlined"
-                      fullWidth
-                      value={formState.empDateofMarriage}
-                      onChange={handleChange}
-                    />
-                  </Grid>
+                      <TextField
+                        name="empDateofMarriage"
+                        type="date"
+                        inputFormat="YYYY/MM/DD"
+                        variant="outlined"
+                        fullWidth
+                        value={formState.empDateofMarriage}
+                        onChange={handleChange}
+                      />
+                    </Grid>
+                  ) : (
+                    ""
+                  )}
 
                   <Grid item xs={12} sm={6}>
                     <MDTypography variant="h6" fontWeight="bold">

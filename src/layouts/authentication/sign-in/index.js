@@ -1,5 +1,7 @@
-/* eslint-disable no-debugger */
 /* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable import/order */
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable no-var */
 /* eslint-disable vars-on-top */
 /* eslint-disable no-alert */
@@ -31,10 +33,11 @@ import Switch from '@mui/material/Switch';
 import { useNavigate } from 'react-router-dom';
 
 // Material Dashboard 2 React components
-import MDBox from 'components/MDBox';
-import MDTypography from 'components/MDTypography';
-import MDInput from 'components/MDInput';
-import MDButton from 'components/MDButton';
+import MDBox from "components/MDBox";
+import MDTypography from "components/MDTypography";
+import MDInput from "components/MDInput";
+import MDButton from "components/MDButton";
+import Logo from "../../../assets/images/Mp_Logo.png"
 
 // Authentication layout components
 import BasicLayout from 'layouts/authentication/components/BasicLayout';
@@ -94,30 +97,32 @@ function Basic() {
 		}
 	};
 
-	return (
-		<BasicLayout image={bgImage}>
-			<Card>
-				<MDBox
-					variant="gradient"
-					bgColor="info"
-					borderRadius="lg"
-					coloredShadow="info"
-					mx={2}
-					mt={-3}
-					p={2}
-					mb={1}
-					textAlign="center"
-				>
-					<MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-						Sign In
-					</MDTypography>
-				</MDBox>
-				<span style={{ color: 'red', fontSize: '12px', margin: 'auto' }}>{error}</span>
-				<MDBox pt={4} pb={3} px={3}>
-					<MDBox component="form" role="form">
-						<MDBox mb={2}>
-							<MDInput label="Email" fullWidth onChange={(e) => setaccountEmpCode(e.target.value)} />
-						</MDBox>
+  return (
+    <BasicLayout image={bgImage}>
+      <Card>
+        <MDBox
+          variant="gradient"
+          bgColor="info"
+          borderRadius="lg"
+          coloredShadow="info"
+          mx={2}
+          mt={-3}
+          p={2}
+          mb={1}
+          textAlign="center"
+        >
+         <img src={Logo} height={100} width={150}/>
+        </MDBox>
+        <span style={{ color: "red", fontSize: "12px", margin: "auto" }}>{error}</span>
+        <MDBox pt={4} pb={3} px={3}>
+          <MDBox component="form" role="form">
+            <MDBox mb={2}>
+              <MDInput
+                label="Email"
+                fullWidth
+                onChange={(e) => setaccountEmpCode(e.target.value)}
+              />
+            </MDBox>
 
 						<MDBox mb={2}>
 							<MDInput

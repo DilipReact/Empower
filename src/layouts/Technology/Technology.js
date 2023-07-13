@@ -24,6 +24,7 @@ import "./Technology.css";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import BiotechIcon from "@mui/icons-material/Biotech";
 import TechnologyTabale from "./TechnologyTable";
+// eslint-disable-next-line import/order
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 function Technology() {
@@ -135,12 +136,8 @@ function Technology() {
 
   return (
     <DashboardLayout>
-    <DashboardNavbar/>
-      <Grid className="header">
-        <Grid item className="logout_icon">
-          <LogoutIcon fontSize="large" />
-        </Grid>
-      </Grid>
+      <DashboardNavbar />
+
       <Grid className="project">
         <Grid className="project_icon">
           <BiotechIcon />
@@ -154,7 +151,7 @@ function Technology() {
           {isSuccess && (
             <div className="alert-massage">
               <Alert severity="success">
-                {isEdit ? "Project updated successfully!" : "Project added successfully!"}
+                {isEdit ? "Technology Updated Successfully!" : "Technology Added Successfully!"}
               </Alert>
             </div>
           )}
@@ -168,7 +165,7 @@ function Technology() {
             <form onSubmit={handleFormSubmit}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <label className="label"> Technology Name</label>
+                  <label className="label">Technology Name</label>
                   <TextField
                     name="technologyName"
                     value={formData.technologyName}
