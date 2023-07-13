@@ -85,6 +85,7 @@ import ChangePassWord from "examples/Navbars/DashboardNavbar/ChangePassWord";
 import Profile from "examples/Navbars/DashboardNavbar/Profile";
 import EmpWorkExpTable from "layouts/EmpWorkExperience/EmpWorkExpTable";
 import TableComment from "layouts/Project/TableComment";
+import UserDashBoard from "layouts/UserDashboard/UserDashBoard";
 
 // @mui icons
 
@@ -241,6 +242,10 @@ const routes = [
   {
     route: "/layouts/tablecomment",
     component: <TableComment />,
+  },
+  {
+    route: "/userdashboard",
+    component: <UserDashBoard fontSize="medium" />,
   },
 ];
 
