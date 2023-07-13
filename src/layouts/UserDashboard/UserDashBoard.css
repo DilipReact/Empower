@@ -1,0 +1,55 @@
+.user_container {
+	width: 100% !important;
+	height: 10rem !important;
+	/* background-color: red !important; */
+	/* background-image: url(../../assets/images/bg-profile.jpeg); */
+	background-color: rgb(117, 187, 219) !important;
+}
+.avtar {
+	width: 150px !important;
+	height: 150px !important;
+	margin: -5% 10% 10% 5% !important;
+}
+.prifile_head {
+	display: flex !important;
+	padding: 1% !important;
+}
+.name_email {
+	margin-left: -9% !important;
+}
+
+.btn {
+	margin-left: auto !important;
+}
+.btn button {
+	color: #fff !important;
+	margin-left: 5px !important;
+	border-radius: 3px !important;
+}
+
+.edit_btn {
+	background-color: rgb(219, 134, 85) !important;
+}
+
+.edit_dwnl {
+	background-color: rgb(18, 145, 113) !important;
+}
+
+.profile_body {
+	width: 100%;
+	padding: 3% !important;
+	margin-top: -10% !important;
+}
+.head {
+	font-size: 17px;
+	font-weight: 500;
+	color: rgb(32, 32, 32);
+	margin-left: 10px;
+}
+.head_item {
+	font-size: 15px;
+	color: rgb(22, 100, 151);
+	background-color: #e2dfdf;
+	border-radius: 3px;
+	padding: 1%;
+}
