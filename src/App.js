@@ -1,6 +1,6 @@
-/* eslint-disable react/jsx-fragments */
-/* eslint-disable prettier/prettier */
 /* eslint-disable no-nested-ternary */
+/* eslint-disable prettier/prettier */
+/* eslint-disable react/jsx-fragments */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable no-unused-vars */
@@ -174,7 +174,8 @@ const roleId = localStorage.getItem("myData") ==null ? null :JSON.parse(localSto
               />
               <Configurator />
               {configsButton}
-            </Fragment>
+          </Fragment>
+          // eslint-disable-next-line prettier/prettier
           )
         )}
       {layout === "vr" && <Configurator />}
