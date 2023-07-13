@@ -7,11 +7,15 @@
         "Empid",
         "emplanguage",
         "emplocation",
+        "errormessage",
+        "maritalstatus",
         "namesoption",
         "Navbars",
         "setaccount",
         "setemployee",
         "seterror",
-        "subroutes"
+        "setmaritalstatus",
+        "subroutes",
+        "Tabale"
     ]
 }

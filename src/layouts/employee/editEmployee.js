@@ -1,51 +1,30 @@
+/* eslint-disable import/newline-after-import */
+/* eslint-disable import/no-duplicates */
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable react/jsx-no-useless-fragment */
+/* eslint-disable radix */
+/* eslint-disable no-unused-vars */
 import { useEffect } from "react";
-
 import Grid from "@mui/material/Grid";
-
 import Card from "@mui/material/Card";
-
 import { Box, TextField } from "@mui/material";
-
 import React, { useState } from "react";
-
 import axios from "axios";
-
-// Material Dashboard 2 React components
-
 import MDBox from "components/MDBox";
-
 import MDTypography from "components/MDTypography";
-
 import MDButton from "components/MDButton";
-
-// import MDTypography from "components/MDTypography";
-
-// Material Dashboard 2 React example components
-
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-
 import Footer from "examples/Footer";
-
 import { Autocomplete, MenuItem } from "@mui/material";
-
 import { useLocation, useNavigate } from "react-router-dom";
-
 import Checkbox from "@mui/material/Checkbox";
-
 import dayjs from "dayjs";
-
 import Select from "@mui/material/Select";
-
 import { useParams } from "react-router-dom";
-
 import Alert from "@mui/material/Alert";
-
 import Stack from "@mui/material/Stack";
-
 const ITEM_HEIGHT = 48;
-
 const ITEM_PADDING_TOP = 8;
 
 const MenuProps = {
@@ -66,68 +45,6 @@ function getStyles(name, personName, theme) {
         : theme.typography.fontWeightMedium,
   };
 }
-
-// import DataTable from "examples/Tables/DataTable";
-
-// Data
-
-// import authorsTableData from "layouts/tables/data/authorsTableData";
-
-// import projectsTableData from "layouts/tables/data/projectsTableData";
-
-// import MDButton from "components/MDButton";
-
-const namesoption = [
-  "  Operating systems",
-
-  " Programming",
-
-  " Security",
-
-  " Servers",
-
-  "  Software",
-
-  "Solution delivery",
-
-  "  Structures",
-
-  "  Systems analysis",
-
-  "  Technical support",
-
-  "  Technology",
-
-  " Testing",
-
-  " Tools",
-
-  " Training",
-
-  " Troubleshooting",
-
-  " klApplications",
-
-  " Coding",
-
-  "  Computing",
-
-  " Configuration",
-
-  "Customer support",
-
-  "Debugging",
-
-  "Design",
-
-  "  Development",
-
-  " Hardware",
-
-  "  HTML",
-
-  " Information technology",
-];
 
 export default function EditEmployee() {
   const [errormessage, setErrorMessage] = useState({});
@@ -167,178 +84,97 @@ export default function EditEmployee() {
   }, []);
 
   console.log(editData);
-
   const AuthGEt = JSON.parse(localStorage.getItem("myData"));
-
   const [gender, setGender] = useState([]);
-
   const [errors, setErrors] = useState("");
-
   const [role, setRole] = useState([]);
-
   const [designation, setDesignation] = useState([]);
-
   const [formState, setFormState] = useState({
     empCode: Object.keys(editData).length > 0 ? editData.empCode : "",
-
     empFName: Object.keys(editData).length > 0 ? editData.empFName : "",
-
     empMName: Object.keys(editData).length > 0 ? editData.empMName : "",
-
     empLName: Object.keys(editData).length > 0 ? editData.empLName : "",
-
     empFatherName: Object.keys(editData).length > 0 ? editData.empFatherName : "",
-
     empEmailId: Object.keys(editData).length > 0 ? editData.empEmailId : "",
-
     empPersonalEmailId: Object.keys(editData).length > 0 ? editData.empPersonalEmailId : "",
-
     empMobileNumber: Object.keys(editData).length > 0 ? editData.empMobileNumber : "",
-
-    empEmergencyContactNumber:
-      Object.keys(editData).length > 0 ? editData.empEmergencyContactNumber : "",
-
+    empEmergencyContactNumber:Object.keys(editData).length > 0 ? editData.empEmergencyContactNumber : "",
     empGenderId: Object.keys(editData).length > 0 ? editData.empGenderId : "",
-
     empLeaderId: Object.keys(editData).length > 0 ? editData.empLeaderId : "",
-
     empStatusId: Object.keys(editData).length > 0 ? editData.empStatusId : "",
-
     empJoiningDate: Object.keys(editData).length > 0 ? editData.empJoiningDate : "",
-
     empDesignationId: Object.keys(editData).length > 0 ? editData.empDesignationId : "",
-
     empDateofBirth: Object.keys(editData).length > 0 ? editData.empDateofBirth : "",
-
     empMaritalStatusId: Object.keys(editData).length > 0 ? editData.empMaritalStatusId : "",
-
     empDateofMarriage: Object.keys(editData).length > 0 ? editData.empDateofMarriage : "",
-
     empLeavingReason: Object.keys(editData).length > 0 ? editData.empLeavingReason : "",
-
     empLeavingDate: Object.keys(editData).length > 0 ? editData.empLeavingDate : "",
-
     reJoining: Object.keys(editData).length > 0 ? editData.reJoining : "",
-
     oldEmpid: Object.keys(editData).length > 0 ? editData.oldEmpid : "",
-
     empPAN: Object.keys(editData).length > 0 ? editData.empPAN : "",
-
     empAadhar: Object.keys(editData).length > 0 ? editData.empAadhar : "",
-
     empHobbies: Object.keys(editData).length > 0 ? editData.empHobbies : "",
-
     emplanguage: Object.keys(editData).length > 0 ? editData.emplanguage : "",
-
     empSummary: Object.keys(editData).length > 0 ? editData.empSummary : "",
-
     empSkills: Object.keys(editData).length > 0 ? editData.empSkills : "",
-
     empLastCompany: Object.keys(editData).length > 0 ? editData.empLastCompany : "",
-
     empLead: Object.keys(editData).length > 0 ? editData.empLead : "",
-
     empRoleId: Object.keys(editData).length > 0 ? editData.empRoleId : "",
-
     createdBy: Object.keys(AuthGEt).length > 0 ? AuthGEt.employeeName : "",
-
     modifiedBy: Object.keys(AuthGEt).length > 0 ? AuthGEt.employeeName : "",
   });
 
   const employeePayload = {
     empCode: formState.empCode,
-
     empFName: formState.empFName,
-
     empMName: formState.empMName,
-
     empLName: formState.empLName,
-
     empFatherName: formState.empFatherName,
-
     empEmailId: formState.empEmailId,
-
     empPersonalEmailId: formState.empPersonalEmailId,
-
     empMobileNumber: formState.empMobileNumber,
-
     empEmergencyContactNumber: formState.empEmergencyContactNumber,
-
     empRoleId: parseInt(formState.empRoleId),
-
     empGenderId: parseInt(formState.empGenderId),
-
     empDesignationId: parseInt(formState.empDesignationId),
-
     empJoiningDate: formState.empJoiningDate,
-
     empDateofBirth: formState.empDateofBirth,
-
     empMaritalStatusId: parseInt(formState.empMaritalStatusId),
-
     empDateofMarriage: formState.empDateofMarriage,
-
     reJoining: true,
-
     empPAN: formState.empPAN,
-
     empAadhar: formState.empAadhar,
-
     oldEmpid: formState.oldEmpid,
-
     emplanguage: formState.emplanguage,
-
     empLastCompany: formState.empLastCompany,
-
     empSummary: formState.empSummary,
-
     empSkills: formState.empSkills,
-
     empHobbies: formState.empHobbies,
-
     empLead: true,
-
     empStatusId: formState.empStatusId,
-
     empLeaderId: formState.empLeaderId,
-
     empLeavingReason: formState.empLeavingReason,
-
     empLeavingDate: formState.empLeavingDate,
-
     createdBy: AuthGEt.employeeName,
-
     modifiedBy: AuthGEt.employeeName,
-
     employeeStatus: {
       empStatusId: 0,
-
       empStatusText: "",
     },
-
     role: {
       roleId: 0,
-
       roleText: "",
     },
-
     gender: {
       genderId: 0,
-
       genderText: "",
     },
-
     designation: {
       designationId: 0,
-
       designationName: "",
-
       designationDescription: "",
-
       designationStatus: true,
-
       createdBy: AuthGEt.employeeName,
-
       modifiedBy: AuthGEt.employeeName,
     },
   };
@@ -349,136 +185,94 @@ export default function EditEmployee() {
     const errorMessage = {};
 
     // Validate empFName
-
     if (formState.empFName === "") {
       errormessage.empFName = "Employee First Name is required";
-
       // eslint-disable-next-line no-empty
     } else {
     }
-
     // Validate empMName
-
     if (formState.empMName === "") {
       errormessage.empMName = "Employee Middle Name is required";
     }
-
     // Validate empLName
-
     if (formState.empLName === "") {
       errormessage.empLName = "Employee Last Name is required";
     }
-
     // Validate empFatherName
-
     if (formState.empFatherName === "") {
       errormessage.empFatherName = "Employee Father Name is required";
     }
-
     // Validate empEmailId
-
     if (formState.empEmailId === "") {
       errormessage.empEmailId = "Email is required";
     } else if (!emailRegex.test(formState.empEmailId)) {
       errormessage.empEmailId = "Invalid email address";
     }
-
     // Validate empPersonalEmailId
-
     if (formState.empPersonalEmailId === "") {
       errormessage.empPersonalEmailId = "Personal EmailId is required";
     } else if (!emailRegex.test(formState.empPersonalEmailId)) {
       errormessage.empPersonalEmailId = "Invalid email address";
     }
-
     // Validate empMobileNumber
-
     if (formState.empMobileNumber === "") {
       errormessage.empMobileNumber = "Employee Mobile Number is required";
     }
-
     // Validate empEmergencyContactNumber
-
     if (formState.empEmergencyContactNumber === "") {
       errormessage.empEmergencyContactNumber = "Employee Emergency Contact Number is required";
     }
-
     // Validate empSkills
-
     if (formState.empSkills === "") {
       errormessage.empSkills = "Employee Skills is required";
     }
-
     // Validate empDateofBirth
-
     if (formState.empDateofBirth === "") {
       errormessage.empDateofBirth = "Employee Date of Birth is required";
     }
-
     // Validate emplanguage
-
     if (formState.emplanguage === "") {
       errormessage.emplanguage = "Employee Language is required";
     }
-
     // Validate empHobbies
-
     if (formState.empHobbies === "") {
       errormessage.empHobbies = "Employee Hobbies is required";
     }
-
     // Validate empGenderId
-
     if (formState.empGenderId === "") {
       errormessage.empGenderId = "Employee Gender is required";
     }
-
     // Validate empJoiningDate
-
     if (formState.empJoiningDate === "") {
       errormessage.empJoiningDate = "Employee Joining Date is required";
     }
-
     // Validate empRoleId
-
     if (formState.empRoleId === "") {
       errormessage.empRoleId = "Employee Role is required";
     }
-
     // Validate empLastCompany
-
     if (formState.empLastCompany === "") {
       errormessage.empLastCompany = "Employee Last Company is required";
     }
-
     // Validate empPAN
-
     if (formState.empPAN === "") {
       errormessage.empPAN = "Employee PAN is required";
     }
-
     // Validate empAadhar
-
     if (formState.empAadhar === "") {
       errormessage.empAadhar = "Employee Aadhar is required";
     }
-
     // Validate empDesignationId
-
     if (formState.empDesignationId === "") {
       errormessage.empDesignationId = "Employee Designation is required";
     }
-
     // Validate empLeaderId
-
     if (formState.empLeaderId === "") {
       errormessage.empLeaderId = "Employee Leader is required";
     }
 
     setErrorMessage({ ...errormessage });
-
     // Return true if there are no errors
-
     return Object.keys(errormessage).length < 1;
   };
 
@@ -486,39 +280,25 @@ export default function EditEmployee() {
     if (e) {
       e.preventDefault();
        const isValide = validateForm();
-
     if (isValide) {
       axios
-
         .post("https://localhost:5001/api/Employee/UpdateEmployee", employeePayload)
-
         .then((response) => {
           // Handle the response
-
           console.log(response.data, "api data");
-
           setIsSuccess(true);
-
           setTimeout(() => {
             setIsSuccess(false);
           }, 3000);
-
           navigate("/employee");
         })
-
         .catch((error) => {
           // Handle the error
-
           console.error(error);
         });
     }
     }
-
-
-
-  
-
-    // console.log("employeePayload", employeePayload);
+  // console.log("employeePayload", employeePayload);
   };
 
   const [error, setError] = useState("");
