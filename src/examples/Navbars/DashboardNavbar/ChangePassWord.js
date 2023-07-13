@@ -79,11 +79,9 @@ const ChangePassWord = () => {
         confirmPassword: confirmPassword,
         modifiedBy: emplyee,
       });
-    console.log(response.data)
+      console.log(response.data);
 
-
-
-console.log(success)
+      console.log(success);
 
       setSuccess(response.data);
       setOldPassword("");
@@ -101,9 +99,6 @@ console.log(success)
         Change Password
       </Typography>
 
-
-
-     
       <form onSubmit={handleSubmit}>
         {showErrors && error && (
           <Typography variant="body1" color="error" gutterBottom>
@@ -114,9 +109,6 @@ console.log(success)
         {success && (
           <Typography variant="body1" color="success" gutterBottom>
             {success}
-
-
-      
           </Typography>
         )}
         <TextField
@@ -167,6 +159,6 @@ console.log(success)
         </Button>
       </form>
     </Box>
-  ); 
+  );
 };
 export default ChangePassWord;
