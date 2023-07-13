@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { TextField, Button, Typography, Box, InputAdornment, IconButton } from "@mui/material";
 import axios from "axios";
 
@@ -31,6 +31,7 @@ const ChangePassWord = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+
   const [showErrors, setShowErrors] = useState(false);
 
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -78,9 +79,13 @@ const ChangePassWord = () => {
         confirmPassword: confirmPassword,
         modifiedBy: emplyee,
       });
-      console.log(response.data);
+    console.log(response.data)
 
-      setSuccess(response.data.message);
+
+
+console.log(success)
+
+      setSuccess(response.data);
       setOldPassword("");
       setNewPassword("");
       setConfirmPassword("");
@@ -95,6 +100,10 @@ const ChangePassWord = () => {
       <Typography variant="h5" align="center" gutterBottom>
         Change Password
       </Typography>
+
+
+
+     
       <form onSubmit={handleSubmit}>
         {showErrors && error && (
           <Typography variant="body1" color="error" gutterBottom>
@@ -106,7 +115,8 @@ const ChangePassWord = () => {
           <Typography variant="body1" color="success" gutterBottom>
             {success}
 
-            {response.data}
+
+      
           </Typography>
         )}
         <TextField
@@ -157,6 +167,6 @@ const ChangePassWord = () => {
         </Button>
       </form>
     </Box>
-  );
+  ); 
 };
 export default ChangePassWord;
