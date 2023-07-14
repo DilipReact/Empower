@@ -8,7 +8,6 @@ import axios from 'axios';
 
 const AuthData = JSON.parse(localStorage.getItem('myData'));
 
-
 function UserDashBoard() {
 	const [ employeeData, setEmployeeData ] = useState([]);
 	const [ error, setError ] = useState('');
@@ -27,13 +26,43 @@ function UserDashBoard() {
 	useEffect(() => {
 		GetEmpData();
 	}, []);
+
+	// For Marital Text
+	let MaritalStatusText = '';
+	if (employeeData.empMaritalStatusId === 5) {
+		MaritalStatusText = 'Marride';
+	} else if (employeeData.empMaritalStatusId === 6) {
+		MaritalStatusText = 'Unmarried';
+	} else {
+		console.log('Marital Status Is Not Found');
+	}
+	// For Gender Text
+	let GenderText = '';
+	if (employeeData.empGenderId === 1) {
+		GenderText = 'Male';
+	} else if (employeeData.empGenderId === 2) {
+		GenderText = 'Female';
+	} else if (employeeData.empGenderId === 3) {
+		GenderText = 'Transgender';
+	} else {
+		console.log('Marital Status Is Not Found');
+	}
+
+	const getInitials = (name) => {
+		const nameArray = name.split(' ');
+		const initials = nameArray.map((n) => n.charAt(0)).join('');
+		return initials.toUpperCase();
+	};
+
+	const avatarName = getInitials(`${employeeData.empFName} ${employeeData.empMName} ${employeeData.empLName}`);
+
 	return (
 		<MDBox>
 			<Grid className="user_container">
 				<DashboardNavbar />
 			</Grid>
 			<Grid className="prifile_head">
-				<Avatar className="avtar" />
+				<Avatar className="avtar">{avatarName}</Avatar>
 				<Grid className="name_email">
 					<h4>
 						{employeeData.empFName} {employeeData.empMName} {employeeData.empLName}
@@ -62,11 +91,18 @@ function UserDashBoard() {
 				</Grid>
 				<Grid item xs={2.4}>
 					<Grid className="head">Date Of Birth</Grid>
-					<Grid className="head_item">{employeeData.empDateofBirth}</Grid>
+					<Grid className="head_item">
+						{employeeData.empDateofBirth &&
+							new Date(employeeData.empDateofBirth).toLocaleDateString(undefined, {
+								day: 'numeric',
+								month: 'short',
+								year: 'numeric'
+							})}
+					</Grid>
 				</Grid>
 				<Grid item xs={2.4}>
 					<Grid className="head">Gender</Grid>
-					<Grid className="head_item">{employeeData.empGenderId}</Grid>
+					<Grid className="head_item">{GenderText}</Grid>
 				</Grid>
 				<Grid item xs={2.4}>
 					<Grid className="head">Father</Grid>
@@ -74,11 +110,18 @@ function UserDashBoard() {
 				</Grid>
 				<Grid item xs={2.4}>
 					<Grid className="head">Marital Status</Grid>
-					<Grid className="head_item">{employeeData.empMaritalStatusId}</Grid>
+					<Grid className="head_item">{MaritalStatusText}</Grid>
 				</Grid>
 				<Grid item xs={2.4}>
 					<Grid className="head">Date of Marrige</Grid>
-					<Grid className="head_item">{employeeData.empDateofMarriage}</Grid>
+					<Grid className="head_item">
+						{employeeData.empDateofMarriage &&
+							new Date(employeeData.empDateofMarriage).toLocaleDateString(undefined, {
+								day: 'numeric',
+								month: 'short',
+								year: 'numeric'
+							})}
+					</Grid>
 				</Grid>
 				<Grid item xs={2.4}>
 					<Grid className="head">Address</Grid>
@@ -94,7 +137,14 @@ function UserDashBoard() {
 				</Grid>
 				<Grid item xs={2.4}>
 					<Grid className="head">Leaving Date</Grid>
-					<Grid className="head_item">{employeeData.empLeavingDate}</Grid>
+					<Grid className="head_item">
+						{employeeData.empLeavingDate &&
+							new Date(employeeData.empLeavingDate).toLocaleDateString(undefined, {
+								day: 'numeric',
+								month: 'short',
+								year: 'numeric'
+							})}
+					</Grid>
 				</Grid>
 				<Grid item xs={2.4}>
 					<Grid className="head">Leaving Reason</Grid>
