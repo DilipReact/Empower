@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable import/order */
